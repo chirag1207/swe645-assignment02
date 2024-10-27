@@ -23,7 +23,7 @@ pipeline {
         }
         stage('deploying on k8') {
             steps {
-                sh 'kubectl set image deployment/hw2-cluster-deployment container-0=chiragnarkar/swe645-assignment02:latest -n default --insecure-skip-tls-verify'
+                sh 'kubectl set image deployment/hw2-cluster-deployment container-0=chiragnarkar/swe645-assignment02:latest -n default'
                 sh 'kubectl rollout restart deploy hw2-cluster-deployment -n default'
             }
         }
